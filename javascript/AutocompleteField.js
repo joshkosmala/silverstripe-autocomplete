@@ -16,6 +16,9 @@
 				return;
 			input.attr('data-loaded', 'true');
             
+			// Add aria-expanded on focus	
+			input.attr('aria-expanded', 'true');
+				
 			// load autocomplete into this field
 			input.autocomplete({
 				source: input.attr('data-source'),
@@ -31,6 +34,10 @@
 					// remove invalid value, as it didn't match anything
 					input.val("");
 					input.data("autocomplete").term = "";
+					
+					// Set aria-expanded to false	
+					input.attr('aria-expanded', 'false');
+					
 					return false;
 				}
 			});
