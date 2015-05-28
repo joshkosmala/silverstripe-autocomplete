@@ -15,15 +15,18 @@
 			if(input.attr('data-loaded') == 'true')
 				return;
 			input.attr('data-loaded', 'true');
-            
-			// Add aria-expanded on focus	
-			input.attr('aria-expanded', 'true');
+         
+			// Add aria-expanded false for dormant state	
+			input.attr('aria-expanded', 'false'); 
+			
 				
 			// load autocomplete into this field
 			input.autocomplete({
 				source: input.attr('data-source'),
 				minLength: input.attr('data-min-length'),
 				change: function( event, ui ) {
+					// Add aria-expanded on focus	
+					input.attr('aria-expanded', 'true');
 					
 					// Check if a selection from the list is required
 					if(!input.attr('data-require-selection')) return true;
