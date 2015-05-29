@@ -19,6 +19,8 @@
 			// Add aria-expanded false for dormant state	
 			input.attr('aria-expanded', 'false'); 
 			
+			
+			
 				
 			// load autocomplete into this field
 			input.autocomplete({
@@ -27,6 +29,8 @@
 				change: function( event, ui ) {
 					// Add aria-expanded on focus	
 					input.attr('aria-expanded', 'true');
+					
+					alert("listening");
 					
 					// Check if a selection from the list is required
 					if(!input.attr('data-require-selection')) return true;
