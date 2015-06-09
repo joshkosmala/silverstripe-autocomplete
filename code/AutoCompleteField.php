@@ -5,7 +5,7 @@
  * @package forms
  * @subpackage fields-formattedinput
  */
-class AutoCompleteField extends TextField {
+class AutoCompleteField extends DropdownField {
 
 	private static $allowed_actions = array(
 		'Suggest'
